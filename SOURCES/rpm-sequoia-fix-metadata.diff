@@ -1,0 +1,18 @@
+diff -up a/Cargo.toml b/Cargo.toml
+--- a/Cargo.toml	2025-06-20 23:38:40.780060126 +0200
++++ b/Cargo.toml	2025-06-20 23:39:27.431884313 +0200
+@@ -42,13 +42,9 @@ crate-type = ["cdylib"]
+ 
+ # We explicitly do not want to enable Sequoia's decompression support.
+ # Hence we only select a crypto backend.
+-default = ["crypto-nettle"]
++default = ["crypto-openssl"]
+ crypto-nettle = ["sequoia-openpgp/crypto-nettle"]
+-crypto-rust = ["sequoia-openpgp/crypto-rust"]
+-crypto-cng = ["sequoia-openpgp/crypto-cng"]
+ crypto-openssl = ["sequoia-openpgp/crypto-openssl"]
+-crypto-botan = ["sequoia-openpgp/crypto-botan"]
+-crypto-botan2 = ["sequoia-openpgp/crypto-botan2"]
+ 
+ [patch.crates-io]
+ buffered-reader = { git = "https://gitlab.com/sequoia-pgp/sequoia", branch = "justus/pqc" }
